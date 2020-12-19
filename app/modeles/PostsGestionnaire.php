@@ -6,17 +6,17 @@
  */
  
  namespace App\Modeles;
+ use \Noyau\Classes\App;
 
  class PostsGestionnaire {
    
-  public function findOneById() {
-    // SQL
-    $post = [
-       'id'    => 1,
-       'titre' => "Titre poste 1",
-       'texte' => "Lorem Ipsum..."
-    ];
-    return new Post($post);
+  public function findOneById(int $id =6) {
+    $sql = "SELECT *
+            FROM posts
+            WHERE id = :id;";
+    $rs = App::getConnexion()->prepare($sql);
+    $rs->bindValue(':id', $id, \PDO::PARAM_INT);
+    $rs->execute();
+    return new Post($rs->fetch(\PDO::FETCH_ASSOC));
   }
  }
- 

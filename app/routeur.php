@@ -5,5 +5,5 @@
 
  */
 
- $postCtrl = new App\Controleurs\PostsControleur();
- $postCtrl->showAction();
+ $ctrl = new App\Controleurs\PostsControleur();
+ $ctrl->showAction(); 
