@@ -19,4 +19,21 @@
     $rs->execute();
     return new Post($rs->fetch(\PDO::FETCH_ASSOC));
   }
+
+
+  public function findAll() {
+   $sql = "SELECT *
+           FROM posts
+           ORDER BY id ASC
+           LIMIT 3;";
+   $rs = App::getConnexion()->prepare($sql);
+   $rs->execute();
+   $posts = $rs->fetchAll(\PDO::FETCH_ASSOC);
+
+   $tab = [];
+   foreach($posts as $post):
+      $tab[] = new Post($post);
+   endforeach;
+   return $tab;
+ }
  }

@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mon super blog - <?php echo $title; ?></title>
-<base href="#" target="_top" />
+<base href="<?php echo \Noyau\Classes\App::getRoot(); ?>" target="_top" />
 <!-- Material Design Icons -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Font Awesome -->

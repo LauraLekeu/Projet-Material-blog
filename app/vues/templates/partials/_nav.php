@@ -5,13 +5,20 @@
 
  */
 ?>
-<nav class="navbar z-depth-2 info-color">
+<nav class="navbar navbar-default z-depth-2 info-color">
   <div class="container ">
     <div class="navbar-header">
-      <a class="navbar-brand waves-effect waves-light" href="#">
+      <a class="navbar-brand waves-effect waves-light" href="<?php echo \Noyau\Classes\App::getRoot(); ?>">
       Mon Super Blog
       </a>
     </div>
+
+    <?php 
+      $ctrl = new \App\Controleurs\PostsControleur();
+      $ctrl->menuAction();
+    ?>
+
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form action="posts/search" method="get" class="navbar-form navbar-right waves-effect waves-light" role="search">
         <div class="form-group">

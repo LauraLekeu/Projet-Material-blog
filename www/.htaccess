@@ -12,7 +12,12 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
 
+# DETAILS D'UNE PAGE (Menu)
+# PATTERN: pages/{id}
+# URL : index.php
+RewriteRule ^page\/([0-9]+)$ index.php?pageId=$1 [L]
 
 # --------------------------------------------------
 RewriteCond %{REQUEST_URI} !\.(js|css|jpg|gif|zip|png|pdf)$ [NC]
 RewriteRule ^(.*)$ index.php [L]
+ 

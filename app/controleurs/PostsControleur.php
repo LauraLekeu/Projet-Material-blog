@@ -21,5 +21,14 @@ class PostsControleur {
     $content = ob_get_clean();
   }
 
+
+  public function menuAction() { 
+   $gestionnaire = new PostsGestionnaire (); // Créer un new objet PostsGestionnaire
+   $posts = $gestionnaire->findAll();   // Lancer la méthode findOneById (envoyer le champ tri)
+
+   include '../app/vues/posts/menu.php';
+
+ }
+
 }
  
