@@ -5,6 +5,8 @@
 
 */
 
+require_once '../vendor/autoload.php';
+
 require_once '../noyau/init.php';
 
 require_once '../app/routeur.php';

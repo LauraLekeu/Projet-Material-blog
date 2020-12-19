@@ -5,5 +5,4 @@
 
  */
 
- namespace App\Controleurs;
- 
+ namespace App\Controleurs; 
