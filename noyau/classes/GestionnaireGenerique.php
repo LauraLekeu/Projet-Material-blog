@@ -7,7 +7,7 @@
  */
 
 namespace Noyau\Classes;
-use \Noyau\Classes\App;
+use \Noyau\Classes;
 
 abstract class GestionnaireGenerique {
 

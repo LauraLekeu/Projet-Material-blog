@@ -8,12 +8,22 @@
  */
 ?>
 
-<!-- Title -->
- <h1><?php echo $post->getTitre(); ?></h1>
+<?php
+use \Noyau\Classes\Template;
+?>
 
- 
+<!-- Affectation de $title  -->
+<?php Template::startZone(); ?>
+<?php echo $post->getTitre(); ?>
+<?php Template::stopZone('title'); ?>
 
- <!-- Post Content -->
- <div><?php echo $post->getTexte(); ?></div>
 
- <hr>
+<!-- Affectation de $content  -->
+<?php Template::startZone(); ?>
+   <h1><?php echo $post->getTitre(); ?></h1>
+   <div><?php echo $post->getTexte(); ?></div>
+   <hr>
+<?php Template::stopZone('content');?>
+   
+   
+

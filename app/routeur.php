@@ -23,6 +23,6 @@
    ACTION : SHOWACTION
    */ 
    $ctrl = new App\Controleurs\PostsControleur();
-   $ctrl->showAction(); 
+   $ctrl->showAction(1); 
 
  endif;

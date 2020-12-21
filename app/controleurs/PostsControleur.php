@@ -8,26 +8,17 @@
 namespace App\Controleurs; 
 use \App\Modeles\PostsGestionnaire; 
 
-class PostsControleur {
-  
-  public function showAction(int $id = 1 ) {  // Détail du poste 1 par défaut
-    $gestionnaire = new PostsGestionnaire (); // Créer un new objet PostsGestionnaire
-    $post = $gestionnaire->findOneById($id);  // Lancer la méthode findOneById (envoyer l'id)
+class PostsControleur extends \Noyau\Classes\ControleurGenerique {
 
-    GLOBAL $content, $title;
-    $title = $post->getTitre();
-    ob_start();
-      include '../app/vues/posts/show.php';
-    $content = ob_get_clean();
-  }
-
+   public function __construct() {
+      $this->_tableName = 'posts';
+      parent::__construct(); // Lancer le construct parent
+   }
 
   public function menuAction() { 
-   $gestionnaire = new PostsGestionnaire (); // Créer un new objet PostsGestionnaire
-   $posts = $gestionnaire->findAll();   // Lancer la méthode findOneById (envoyer le champ tri)
-
+     
+   $posts = $this->_gestionnaire->findAll();        // Lancer la méthode findOneById (envoyer le champ tri)
    include '../app/vues/posts/menu.php';
-
  }
 
 }
