@@ -25,12 +25,16 @@ abstract class GestionnaireGenerique {
       return new $this->_class($rs->fetch(\PDO::FETCH_ASSOC));
     }
 
-    public function findAll() {
+    public function findAll(array $data) {
       $sql = "SELECT *
               FROM `{$this->_table}`
-              ORDER BY id ASC
-              LIMIT 3;";
+              ORDER BY `{$data['orderByField']}` {$data['orderBySens']}
+              LIMIT :limit
+              OFFSET :offset;";
+
       $rs = App::getConnexion()->prepare($sql);
+      $rs->bindValue(':limit', $data['limit'], \PDO::PARAM_INT);
+      $rs->bindValue(':offset', $data['offset'], \PDO::PARAM_INT);
       $rs->execute();
       $tab = $rs->fetchAll(\PDO::FETCH_ASSOC);
    

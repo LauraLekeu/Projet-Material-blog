@@ -14,12 +14,6 @@ class PostsControleur extends \Noyau\Classes\ControleurGenerique {
       $this->_tableName = 'posts';
       parent::__construct(); // Lancer le construct parent
    }
-
-  public function menuAction() { 
-     
-   $posts = $this->_gestionnaire->findAll();        // Lancer la méthode findOneById (envoyer le champ tri)
-   include '../app/vues/posts/menu.php';
- }
-
+   
 }
  

@@ -15,7 +15,11 @@
 
     <?php 
       $ctrl = new \App\Controleurs\PostsControleur();
-      $ctrl->menuAction();
+      $ctrl->indexAction([
+         'view' => 'menu',
+         'orderByField' => 'id', 
+         'limit' => 3
+      ]);
     ?>
 
 

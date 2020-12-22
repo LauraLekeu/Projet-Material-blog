@@ -27,10 +27,21 @@ abstract class ControleurGenerique {
 
     }
 
-    public function indexAction() {
+    public function indexAction(array $userData= []) {
+      $defaultValue = [
+         'view' => 'index',
+         'orderByField' => 'id',
+         'orderBySens' => 'asc',
+         'limit' => 4294967295,
+         'offset' => 0
+      ];
+
+      $data = array_merge($defaultValue ,$userData);
+
       $r = $this->_tableName ;
-      $$r = $this->_gestionnaire->findAll(); 
-      include '../app/vues/' . $this->_tableName . '/index.php';
+      $$r = $this->_gestionnaire->findAll($data); 
+      include '../app/vues/' . $this->_tableName . '/' . $data['view'] . '.php';
+      }
    }
 
-}
+
