@@ -11,7 +11,11 @@ use \Noyau\Classes;
 
 abstract class GestionnaireGenerique {
 
-   protected $_tableName, $_class;
+   protected $_table, $_class;
+
+   protected function __construct() {
+      $this->_class = '\App\Modeles\\' . ucfirst(substr($this->_table, 0, -1));
+   }
 
    // METHODES CRUD 
 

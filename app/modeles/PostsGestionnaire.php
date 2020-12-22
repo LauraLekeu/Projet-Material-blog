@@ -12,7 +12,7 @@
 
    public function __construct() {
       $this->_table = 'posts';
-      $this->_class = '\App\Modeles\Post';
+      parent::__construct();
    }
 
  }

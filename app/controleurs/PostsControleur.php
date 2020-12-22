@@ -11,7 +11,7 @@ use \App\Modeles\PostsGestionnaire;
 class PostsControleur extends \Noyau\Classes\ControleurGenerique {
 
    public function __construct() {
-      $this->_tableName = 'posts';
+      $this->_table = 'posts';
       parent::__construct(); // Lancer le construct parent
    }
    

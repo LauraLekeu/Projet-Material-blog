@@ -9,21 +9,21 @@ namespace Noyau\Classes;
 
 abstract class ControleurGenerique {
 
-   protected $_gestionnaire, $_tableName;
+   protected $_gestionnaire, $_table;
 
    public function __construct() {
-      $gestionnaireName = '\App\Modeles\\' . ucfirst($this->_tableName) . 'Gestionnaire';
+      $gestionnaireName = '\App\Modeles\\' . ucfirst($this->_table) . 'Gestionnaire';
       $this->_gestionnaire = new $gestionnaireName;
    }
     
 
    public function showAction($data, string $field = 'id') {  // Détail du poste 1 par défaut
 
-      $r = substr($this->_tableName, 0, -1);   // r = record
+      $r = substr($this->_table, 0, -1);   // r = record
       $methodName = 'findOneBy' . ucfirst($field);
       $$r = $this->_gestionnaire->$methodName($data); // $$r = Variable dynamique ($ suivit d'un string)
  
-      include '../app/vues/' . $this->_tableName . '/show.php';
+      include '../app/vues/' . $this->_table . '/show.php';
 
     }
 
@@ -38,9 +38,9 @@ abstract class ControleurGenerique {
 
       $data = array_merge($defaultValue ,$userData);
 
-      $r = $this->_tableName ;
+      $r = $this->_table ;
       $$r = $this->_gestionnaire->findAll($data); 
-      include '../app/vues/' . $this->_tableName . '/' . $data['view'] . '.php';
+      include '../app/vues/' . $this->_table . '/' . $data['view'] . '.php';
       }
    }
 
