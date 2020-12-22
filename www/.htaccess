@@ -12,6 +12,11 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
 
+# DETAILS D'UNE CATEGORIE
+# PATTERN: categories/{id}
+# URL : index.php
+RewriteRule ^categories\/([0-9]+)$ index.php?categoriesId=$1 [L]
+
 # DETAILS D'UNE PAGE (Menu)
 # PATTERN: pages/{id}
 # URL : index.php

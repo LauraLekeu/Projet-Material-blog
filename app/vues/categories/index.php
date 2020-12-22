@@ -14,7 +14,7 @@
 <ul class="collection">
    <?php foreach($categories as $categorie): ?>
       <li>
-         <a href="#"> 
+         <a href="categories/<?php echo $categorie->getId(); ?>"> 
             <?php echo $categorie->getTitre(); ?> 
          </a>
       </li>
