@@ -9,21 +9,12 @@
 <div class="col-md-4">
   <div class="sidebar">
     <!-- Blog Search Well -->
-    <h4>Categories</h4>
-    <ul class="collection">
-      <li>
-        <a href="categorie/bidon" class="collection-item">Bidon</a>
-      </li>
-      <li>
-        <a href="categorie/design-web" class="collection-item">Design web</a>
-      </li>
-      <li>
-        <a href="categorie/developpement-backend" class="collection-item">Développement backend</a>
-      </li>
-      <li>
-        <a href="categorie/developpement-frontend" class="collection-item">Développement frontend</a>
-      </li>
-    </ul>
+
+    <?php  
+      // Liste des catégories
+       $ctrl = new \App\Controleurs\CategoriesControleur();
+       $ctrl->indexAction();  
+    ?>
 
     <br/>
     <!-- Subscription widget -->

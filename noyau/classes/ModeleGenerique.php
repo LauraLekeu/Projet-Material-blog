@@ -8,13 +8,28 @@
 
  abstract class ModeleGenerique {
 
+   protected $_dateCreation;
+
+   // Constructeur
    public function __construct(array $data = null) {
      if ($data) :
        $this->hydrater($data);
      endif;
    }
 
- // Hydrateur
+   // GETTERS 
+   public function getDateCreation(){
+      return $this->_dateCreation;
+   }
+
+   // SETTERS
+   public function setDateCreation($data = null) {
+      if (isset($data)):
+         $this->_dateCreation = $data;
+      endif;
+   }
+
+   // Hydrateur
    public function hydrater(array $data = null){
       if ($data) :
          foreach ($data as $propriete => $valeur) :
