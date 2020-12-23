@@ -16,7 +16,7 @@ abstract class Template {
 
    public static function stopZone(string $zone) {
       GLOBAL $$zone;
-      $$zone = ob_get_clean();
+      $$zone .= ob_get_clean();
    }
 
 }

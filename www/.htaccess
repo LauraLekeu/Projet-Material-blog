@@ -12,6 +12,11 @@ RewriteEngine on
 # ROUTES
 #--------------------------------------------------
 
+# DETAILS D'UN AUTEUR
+# PATTERN: auteur/{id}
+# URL : index.php
+RewriteRule ^auteur\/([0-9]+)$ index.php?auteurId=$1 [L]
+
 # DETAILS D'UNE CATEGORIE
 # PATTERN: categories/{id}
 # URL : index.php

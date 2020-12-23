@@ -19,11 +19,21 @@ elseif(isset($_GET['categoriesId'])):
    /*
    DETAIL D'UNE PAGE (menu)
    PATTERN : /
-   CTRL : PostsControleur
+   CTRL : CategorieControleur
    ACTION : SHOWACTION
    */ 
    include_once '../app/routeurs/categoriesRouteur.php';
    
+elseif(isset($_GET['auteurId'])):
+   /*
+   DETAIL D'UN AUTEUR 
+   PATTERN : /
+   CTRL : AuteurControleur
+   ACTION : SHOWACTION
+   */ 
+   include_once '../app/routeurs/auteursRouteur.php';
+   
+      
  else:
    /*
    ROUTE PAR DEFAUT 
