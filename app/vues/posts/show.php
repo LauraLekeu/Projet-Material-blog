@@ -21,7 +21,10 @@ use \Noyau\Classes\Template;
 <!-- Affectation de $content  -->
 <?php Template::startZone(); ?>
    <h1><?php echo $post->getTitre(); ?></h1>
+   <div>Publié le </div> <time><?php echo $post->getDatePublication(); ?></time>
    <div><?php echo $post->getTexte(); ?></div>
+   
+   
    <hr>
 <?php Template::stopZone('content');?>
    

@@ -8,7 +8,7 @@
 
  abstract class ModeleGenerique {
 
-   protected $_dateCreation;
+   protected $_datePublication;
 
    // Constructeur
    public function __construct(array $data = null) {
@@ -18,16 +18,16 @@
    }
 
    // GETTERS 
-   public function getDateCreation(){
-      return $this->_dateCreation;
+   public function getDatePublication(string $format = 'Y-m-d- H:i:s'){
+      return $this->_datePublication->format('l j F Y');
    }
 
    // SETTERS
-   public function setDateCreation($data = null) {
+   public function setDatePublication(string $data = null) {
       if (isset($data)):
-         $this->_dateCreation = $data;
+         $this->_datePublication = new \DateTime($data); 
       endif;
-   }
+   } 
 
    // Hydrateur
    public function hydrater(array $data = null){
