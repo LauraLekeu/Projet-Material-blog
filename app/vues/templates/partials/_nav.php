@@ -18,7 +18,7 @@
       $ctrl->indexAction([
          'view' => 'menu',
          'orderByField' => 'id', 
-         'limit' => 3
+         'limit' => 4
       ]);
     ?>
 

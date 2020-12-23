@@ -23,6 +23,20 @@ use \Noyau\Classes\Template;
    <h1><?php echo $post->getTitre(); ?></h1>
    <div>Publié le </div> <time><?php echo $post->getDatePublication(); ?></time>
    <div><?php echo $post->getTexte(); ?></div>
+
+
+   <?php 
+   if($post->getId() === 4): 
+   $ctrl = new \App\Controleurs\PostsControleur();
+   $ctrl->indexAction([
+      'limit'  => 15,
+      'orderField' => 'datePublication',
+      'orderSens' => 'desc',
+      'offset' => 5
+   ]);
+   endif;
+
+   ?>
    
    
    <hr>
